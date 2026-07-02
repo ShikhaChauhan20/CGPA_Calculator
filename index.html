@@ -85,7 +85,7 @@
         // Active tab memory tracking
         let currentActiveTab = 'sgpa-tab';
 
-        // --- 1. Navigation Tab Switching Script ---
+        //  1. Navigation Tab Switching Script 
         function switchTab(target, clickedBtn) {
             document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.add('hidden'));
             document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -103,13 +103,13 @@
             localStorage.setItem('activeTab', currentActiveTab);
         }
 
-        // --- University Grade Points Map ---
+        // University Grade Points Map 
         function getGradePoint(letter) {
             const gradeMap = {'A+': 10, 'A': 9, 'B+': 8, 'B': 7, 'C+': 6, 'C': 5, 'D': 4, 'F': 0};
             return gradeMap[letter] !== undefined ? gradeMap[letter] : NaN;
         }
 
-        // --- 2. SGPA (Single Semester) Operations ---
+        // 2. SGPA (Single Semester) Operations 
         function addSgpaRow(title = '', credits = '', grade = '') {
             const container = document.getElementById('sgpa-rows-container');
             const newRow = document.createElement('div');
@@ -170,7 +170,7 @@
             displayResult(document.getElementById('sgpa-result'), count, sumPoints, sumCredits, 'SGPA');
         }
 
-        // --- 3. CGPA (Multi-Semester) Operations ---
+        //  3. CGPA (Multi-Semester) Operations 
         function addCgpaRow(credits = '', sgpa = '') {
             const container = document.getElementById('cgpa-rows-container');
             const currentCount = container.children.length + 1;
@@ -227,7 +227,7 @@
             displayResult(document.getElementById('cgpa-result'), count, sumPoints, sumCredits, 'CGPA');
         }
 
-        // --- 4. Render Output Box ---
+        //  4. Render Output Box 
         function displayResult(div, count, totalPoints, totalCredits, labelText) {
             div.classList.remove('hidden');
             if(count === 0 || totalCredits === 0) {
@@ -240,7 +240,7 @@
             div.innerHTML = `🎉 Your Estimated ${labelText} is: <span class="text-blue-600 text-2xl font-black">${aggregate}</span><br><span class="text-xs font-medium text-slate-500 block mt-1">Calculated across ${totalCredits} overall credit hours.</span>`;
         }
 
-        // --- 5. Reset Action ---
+        //5. Reset Action 
         function clearLocalStorage(type) {
             if(confirm(`Are you sure you want to clear all data on this tab?`)) {
                 if (type === 'sgpa') {
@@ -257,7 +257,7 @@
             }
         }
 
-        // ==================== INITIALIZATION ENGINE (ON LOAD) ====================
+        // INITIALIZATION ENGINE (ON LOAD) 
         window.onload = function() {
             // Load Active Navigation Tab State
             const savedTab = localStorage.getItem('activeTab');
@@ -267,7 +267,7 @@
                 switchTab('sgpa-tab', document.getElementById('sgpa-btn-tab'));
             }
 
-            // Load saved SGPA data or build an empty placeholder row
+            
             const savedSgpa = localStorage.getItem('sgpaData');
             if(savedSgpa) {
                 const parsedSgpa = JSON.parse(savedSgpa);
@@ -276,7 +276,7 @@
                 } else { addSgpaRow(); }
             } else { addSgpaRow(); }
 
-            // Load saved CGPA data or build an empty placeholder row
+            
             const savedCgpa = localStorage.getItem('cgpaData');
             if(savedCgpa) {
                 const parsedCgpa = JSON.parse(savedCgpa);
@@ -374,7 +374,7 @@
         // Active tab memory tracking
         let currentActiveTab = 'sgpa-tab';
 
-        // --- 1. Navigation Tab Switching Script ---
+        //1. Navigation Tab Switching Script 
         function switchTab(target, clickedBtn) {
             document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.add('hidden'));
             document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -546,7 +546,7 @@
             }
         }
 
-        // ==================== INITIALIZATION ENGINE (ON LOAD) ====================
+        //INITIALIZATION ENGINE (ON LOAD)
         window.onload = function() {
             // Load Active Navigation Tab State
             const savedTab = localStorage.getItem('activeTab');
