@@ -40,10 +40,3 @@ $$CGPA = \frac{\sum (\text{SGPA} \times \text{Total Semester Credits})}{\sum \te
 
 ---
 
-## 🚀 How to Run Locally
-
-Since this is a fully client-side application, there are no complicated installation steps or server environments required:
-
-1. Clone or download this repository.
-2. Double-click the `index.html` file to open it instantly inside any modern browser (Chrome, Edge, Safari, Firefox).
-3. Start tracking your academic milestones!
